@@ -3,7 +3,7 @@ pipeline {
     stages {	
         stage ('Build Stage') {
             steps {
-			dir("/var/lib/jenkins/workspace/deploy/"){
+			dir("cp /var/lib/jenkins/workspace/pipelinejob/"){
 			sh 'mvn clean install'
             }
             }
@@ -11,7 +11,7 @@ pipeline {
 		stage ('Deployment Stage') {
             steps {
                 
-                    sh 'cp 'cp target/*.war /root/apache-tomcat-9.0.22-src/webapps/'
+                    sh 'cp /var/lib/jenkins/workspace/pipelinejob/target/*.war /root/apache-tomcat-9.0.22-src/webapps/'
             }
         }
     }
